@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gerador">
+  <rect width="64" height="64" rx="16" fill="#f3f7ff"/>
+  <rect x="13" y="24" width="38" height="20" rx="5" fill="#ffffff" stroke="#09204f" stroke-width="3"/>
+  <circle cx="24" cy="34" r="5" fill="#ffce32" stroke="#09204f" stroke-width="2"/>
+  <path d="M34 31h10M34 37h7M19 48h26" stroke="#1d63ff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M20 20h19" stroke="#09204f" stroke-width="3" stroke-linecap="round"/>
+</svg>

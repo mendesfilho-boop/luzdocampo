@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luz do Campo: projeto educativo de consumo consciente, economia de energia e planejamento sustentável para famílias, estudantes e comunidades.">
+  <title>Luz do Campo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <nav class="navegacao" aria-label="Navegação principal">
+      <a class="marca" href="#inicio" aria-label="Luz do Campo - início">
+        <span class="marca-simbolo"><img src="img/luz-do-campo.svg" alt=""></span>
+        <span>Luz do Campo</span>
+      </a>
+      <button class="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#autossuficiencia">Autossuficiência</a></li>
+        <li><a href="#dicas">Dicas</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero secao" id="inicio">
+      <div class="hero-conteudo">
+        <p class="etiqueta">Concurso Agrinho 2026</p>
+        <p class="tema-agrinho">Agro forte, futuro sustentável.</p>
+        <div class="titulo-hero">
+          <img src="img/luz-do-campo.svg" alt="">
+          <h1>LUZ DO CAMPO</h1>
+        </div>
+        <p class="slogan">Energia consciente para um futuro sustentável.</p>
+        <p>
+          Entenda quanto cada equipamento consome, estime o custo mensal da energia
+          e descubra formas de economizar e planejar alternativas sustentáveis para
+          sua casa e sua comunidade.
+        </p>
+        <a class="botao principal" href="#calculadora">Acessar calculadora</a>
+      </div>
+      <div class="hero-imagem" aria-label="Casa do campo com sol, painel solar, folha e energia">
+        <img src="img/luz-do-campo.svg" alt="Casa do campo com sol, painel solar, folha e símbolo de energia.">
+      </div>
+    </section>
+
+    <section class="secao intro-consumo" aria-labelledby="titulo-consumo">
+      <div>
+        <p class="etiqueta">Consumo consciente</p>
+        <h2 id="titulo-consumo">Energia consciente começa no planejamento</h2>
+      </div>
+      <p>
+        O consumo elétrico é medido em quilowatt-hora (kWh). Ao observar a potência
+        dos equipamentos, o tempo de uso diário e os dias de uso no mês, famílias e
+        estudantes conseguem comparar hábitos, reduzir desperdícios e pensar em
+        escolhas mais sustentáveis para o campo, a cidade e a comunidade.
+      </p>
+    </section>
+
+    <section class="secao calculadora" id="calculadora" aria-labelledby="titulo-calculadora">
+      <div class="cabecalho-secao">
+        <p class="etiqueta">Calculadora de consumo</p>
+        <div class="titulo-secao-com-icone">
+          <img src="img/calculator.svg" alt="">
+          <h2 id="titulo-calculadora">Calcule o consumo da sua casa</h2>
+        </div>
+        <p>Veja quais equipamentos mais consomem energia e planeje formas de economizar no dia a dia.</p>
+      </div>
+
+      <div class="calculadora-grade">
+        <form class="formulario" id="form-equipamento" novalidate>
+          <div class="campo">
+            <label for="equipamento-predefinido">Equipamento predefinido</label>
+            <select id="equipamento-predefinido" name="equipamento-predefinido">
+              <option value="">Escolha um equipamento</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="nome">Nome do equipamento</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex.: chuveiro elétrico" autocomplete="off">
+          </div>
+
+          <div class="duas-colunas">
+            <div class="campo">
+              <label for="potencia">Potência em watts</label>
+              <input type="number" id="potencia" name="potencia" placeholder="Ex.: 5500" min="0" step="0.01">
+            </div>
+            <div class="campo">
+              <label for="dias">Dias de uso no mês</label>
+              <input type="number" id="dias" name="dias" placeholder="Ex.: 30" min="1" max="31" step="1">
+            </div>
+          </div>
+
+          <div class="duas-colunas">
+            <div class="campo">
+              <label for="horas">Horas de uso por dia</label>
+              <input type="number" id="horas" name="horas" placeholder="Ex.: 1" min="0" max="24" step="1">
+            </div>
+            <div class="campo">
+              <label for="minutos">Minutos de uso por dia</label>
+              <input type="number" id="minutos" name="minutos" placeholder="Ex.: 30" min="0" max="59" step="1">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="valor-kwh">Valor estimado do kWh (R$)</label>
+            <input type="number" id="valor-kwh" name="valor-kwh" value="0.64" min="0" step="0.01">
+            <small>Valor inicial aproximado. Em áreas rurais, pode haver tarifa específica ou descontos. Confira o valor real na sua conta de energia.</small>
+          </div>
+
+          <p class="mensagem" id="mensagem-form" role="status" aria-live="polite"></p>
+
+          <div class="acoes">
+            <button class="botao principal" type="submit" id="botao-salvar">Adicionar equipamento</button>
+            <button class="botao secundario" type="button" id="limpar-formulario">Limpar formulário</button>
+            <button class="botao secundario" type="button" id="limpar-tudo">Limpar lista</button>
+          </div>
+        </form>
+
+        <aside class="resumo" aria-labelledby="titulo-resumo">
+          <h3 id="titulo-resumo">Resumo do consumo familiar</h3>
+          <div class="resumo-itens">
+            <div class="resumo-card consumo-card">
+              <img src="img/solar-panel.svg" alt="">
+              <span>Consumo total mensal</span>
+              <strong id="total-kwh">0,00 kWh</strong>
+            </div>
+            <div class="resumo-card media-card">
+              <img src="img/home-energy.svg" alt="">
+              <span>Consumo médio diário</span>
+              <strong id="media-diaria">0,00 kWh</strong>
+            </div>
+            <div class="resumo-card custo-card">
+              <img src="img/calculator.svg" alt="">
+              <span>Custo total estimado</span>
+              <strong id="total-custo">R$ 0,00</strong>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="lista-area">
+        <div class="lista-topo">
+          <h3>Equipamentos adicionados</h3>
+          <span id="quantidade-itens">0 itens</span>
+        </div>
+        <div class="tabela-responsiva">
+          <table>
+            <thead>
+              <tr>
+                <th>Equipamento</th>
+                <th>Potência</th>
+                <th>Uso diário</th>
+                <th>Dias</th>
+                <th>Consumo mensal</th>
+                <th>Custo</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="lista-equipamentos"></tbody>
+          </table>
+        </div>
+        <p class="lista-vazia" id="lista-vazia">Nenhum equipamento adicionado ainda.</p>
+      </div>
+    </section>
+
+    <section class="secao autossuficiencia" id="autossuficiencia" aria-labelledby="titulo-autossuficiencia">
+      <div class="cabecalho-secao">
+        <p class="etiqueta">Planejamento energético</p>
+        <div class="titulo-secao-com-icone">
+          <img src="img/solar-panel.svg" alt="">
+          <h2 id="titulo-autossuficiencia">Alternativas para autossuficiência</h2>
+        </div>
+        <p>As estimativas abaixo são educativas e usam o consumo total calculado para comparar energia solar, baterias e gerador emergencial.</p>
+      </div>
+
+      <div class="totais-autossuficiencia">
+        <div>
+          <span>Consumo total mensal</span>
+          <strong id="auto-total-mensal">0,00 kWh</strong>
+        </div>
+        <div>
+          <span>Consumo médio diário</span>
+          <strong id="auto-media-diaria">0,00 kWh</strong>
+        </div>
+      </div>
+
+      <div class="planejamento-grade">
+        <article class="painel-planejamento">
+          <div class="card-cabecalho">
+            <img src="img/solar-panel.svg" alt="">
+            <h3>Painéis solares</h3>
+          </div>
+          <div class="campo">
+            <label for="horas-sol">Horas de sol pleno por dia</label>
+            <input type="number" id="horas-sol" value="4.5" min="0.1" step="0.1">
+          </div>
+          <div class="campo">
+            <label for="potencia-painel">Potência de cada painel solar (W)</label>
+            <input type="number" id="potencia-painel" value="550" min="1" step="1">
+          </div>
+          <div class="campo">
+            <label for="fator-eficiencia">Fator de eficiência/perdas</label>
+            <input type="number" id="fator-eficiencia" value="0.75" min="0.1" max="1" step="0.01">
+          </div>
+          <ul class="resultados">
+            <li><span>Potência necessária</span><strong id="solar-kwp">0,00 kWp</strong></li>
+            <li><span>Quantidade de painéis</span><strong id="solar-paineis">0</strong></li>
+            <li><span>Produção mensal estimada</span><strong id="solar-producao">0,00 kWh</strong></li>
+          </ul>
+          <p class="aviso">Esta é uma estimativa educativa. Um sistema solar real precisa de avaliação técnica e condições adequadas de instalação.</p>
+        </article>
+
+        <article class="painel-planejamento">
+          <div class="card-cabecalho">
+            <img src="img/battery.svg" alt="">
+            <h3>Baterias</h3>
+          </div>
+          <div class="campo">
+            <label for="dias-autonomia">Dias de autonomia desejados</label>
+            <input type="number" id="dias-autonomia" value="1" min="0.1" step="0.1">
+          </div>
+          <div class="campo">
+            <label for="capacidade-bateria">Capacidade de cada bateria/módulo (kWh)</label>
+            <input type="number" id="capacidade-bateria" value="5" min="0.1" step="0.1">
+          </div>
+          <div class="campo">
+            <label for="profundidade-descarga">Profundidade de descarga útil</label>
+            <input type="number" id="profundidade-descarga" value="0.8" min="0.1" max="1" step="0.01">
+          </div>
+          <ul class="resultados">
+            <li><span>Capacidade recomendada</span><strong id="bateria-capacidade">0,00 kWh</strong></li>
+            <li><span>Quantidade de módulos</span><strong id="bateria-quantidade">0</strong></li>
+            <li><span>Autonomia estimada</span><strong id="bateria-autonomia">0 dia</strong></li>
+          </ul>
+          <p class="aviso">Baterias podem ajudar na autonomia, mas aumentam o custo e devem ser dimensionadas com cuidado.</p>
+        </article>
+
+        <article class="painel-planejamento">
+          <div class="card-cabecalho">
+            <img src="img/generator.svg" alt="">
+            <h3>Gerador emergencial</h3>
+          </div>
+          <div class="campo">
+            <label for="litros-kwh">Consumo do gerador (litros por kWh)</label>
+            <input type="number" id="litros-kwh" value="0.35" min="0.01" step="0.01">
+          </div>
+          <div class="campo">
+            <label for="preco-combustivel">Preço do combustível por litro (R$)</label>
+            <input type="number" id="preco-combustivel" value="6.00" min="0.01" step="0.01">
+          </div>
+          <div class="duas-colunas">
+            <div class="campo">
+              <label for="fator-simultaneidade">Fator de simultaneidade</label>
+              <input type="number" id="fator-simultaneidade" value="0.6" min="0.1" max="1" step="0.01">
+            </div>
+            <div class="campo">
+              <label for="margem-gerador">Margem de segurança</label>
+              <input type="number" id="margem-gerador" value="1.25" min="1" step="0.05">
+            </div>
+          </div>
+          <ul class="resultados">
+            <li><span>Combustível por mês</span><strong id="gerador-litros">0,00 L</strong></li>
+            <li><span>Custo mensal estimado</span><strong id="gerador-custo">R$ 0,00</strong></li>
+            <li><span>Potência sugerida</span><strong id="gerador-potencia">0,00 kW</strong></li>
+          </ul>
+          <p class="aviso">Geradores a combustível devem ser considerados principalmente como alternativa emergencial, pois geram custo contínuo, ruído e impacto ambiental.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao dicas" id="dicas" aria-labelledby="titulo-dicas">
+      <div class="cabecalho-secao">
+        <p class="etiqueta">Educação ambiental</p>
+        <div class="titulo-secao-com-icone">
+          <img src="img/lightbulb.svg" alt="">
+          <h2 id="titulo-dicas">Hábitos simples ajudam a economizar</h2>
+        </div>
+      </div>
+      <div class="cards-dicas">
+        <article class="card-dica">
+          <span><img src="img/water-saving.svg" alt=""></span>
+          <h3>Use energia com consciência</h3>
+          <p>O chuveiro elétrico costuma ter alto impacto no consumo. Reduzir alguns minutos de banho ajuda a evitar desperdício.</p>
+        </article>
+        <article class="card-dica">
+          <span><img src="img/lightbulb.svg" alt=""></span>
+          <h3>Valorize tecnologias eficientes</h3>
+          <p>Lâmpadas LED e equipamentos eficientes consomem menos energia e contribuem para uma rotina mais sustentável.</p>
+        </article>
+        <article class="card-dica">
+          <span><img src="img/plug.svg" alt=""></span>
+          <h3>Evite consumo escondido</h3>
+          <p>Equipamentos ligados na tomada podem consumir energia mesmo quando parecem parados.</p>
+        </article>
+        <article class="card-dica">
+          <span><img src="img/list-check.svg" alt=""></span>
+          <h3>Planeje em família</h3>
+          <p>A lista da calculadora mostra quais itens pesam mais e ajuda a família a combinar mudanças de hábito.</p>
+        </article>
+        <article class="card-dica">
+          <span><img src="img/calculator.svg" alt=""></span>
+          <h3>Conheça sua conta de energia</h3>
+          <p>Use o valor do kWh da sua conta para aproximar os cálculos da realidade da sua casa.</p>
+        </article>
+        <article class="card-dica">
+          <span><img src="img/solar-panel.svg" alt=""></span>
+          <h3>Pense no futuro sustentável</h3>
+          <p>Antes de escolher painéis, baterias ou gerador, use as estimativas como ponto de partida e procure orientação técnica.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <div>
+        <p class="etiqueta">Sobre o projeto</p>
+        <div class="titulo-secao-com-icone">
+          <img src="img/info.svg" alt="">
+          <h2 id="titulo-sobre">Educação, tecnologia e sustentabilidade</h2>
+        </div>
+      </div>
+      <p>
+        O Luz do Campo é um projeto educativo desenvolvido para o Concurso Agrinho 2026.
+        A proposta une tecnologia, sustentabilidade e educação para ajudar estudantes
+        e famílias a compreenderem melhor o consumo de energia e refletirem sobre
+        alternativas mais conscientes para o futuro.
+      </p>
+      <p>
+        O projeto Luz do Campo dialoga com o tema “Agro forte, futuro sustentável:
+        equilíbrio entre produção e meio ambiente”, mostrando que o uso consciente
+        da energia também faz parte de uma vida mais sustentável no campo, na cidade
+        e nas comunidades.
+      </p>
+      <p>
+        Mesmo em locais com tarifa rural ou benefícios específicos, conhecer o consumo
+        dos equipamentos ajuda no planejamento, na economia de recursos e no uso mais
+        consciente da energia.
+      </p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Luz do Campo - Projeto educativo para o Agrinho 2026.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

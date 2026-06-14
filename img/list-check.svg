@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lista de comparação">
+  <rect width="64" height="64" rx="16" fill="#f3f7ff"/>
+  <rect x="17" y="13" width="34" height="42" rx="6" fill="#ffffff" stroke="#09204f" stroke-width="3"/>
+  <path d="m23 27 4 4 8-9M23 42l4 4 8-9M39 29h6M39 44h6" fill="none" stroke="#1d63ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

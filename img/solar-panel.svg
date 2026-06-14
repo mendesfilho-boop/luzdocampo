@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Painel solar">
+  <rect width="64" height="64" rx="16" fill="#f3f7ff"/>
+  <circle cx="45" cy="17" r="7" fill="#ffce32" stroke="#09204f" stroke-width="2"/>
+  <path d="M12 35h34l6 16H18l-6-16Z" fill="#1d63ff" stroke="#09204f" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M20 35l5 16M29 35l4 16M38 35l3 16M15 43h34" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>

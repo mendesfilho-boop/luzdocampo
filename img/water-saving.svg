@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Banho consciente">
+  <rect width="64" height="64" rx="16" fill="#f3f7ff"/>
+  <path d="M20 18h20a8 8 0 0 1 8 8v2" fill="none" stroke="#09204f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M34 28h20" stroke="#1d63ff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M24 37c0 5 8 5 8 0 0-4-4-8-4-8s-4 4-4 8Z" fill="#ffce32" stroke="#09204f" stroke-width="2"/>
+  <path d="M42 38v.5M50 38v.5M38 46v.5M47 47v.5" stroke="#1d63ff" stroke-width="4" stroke-linecap="round"/>
+</svg>

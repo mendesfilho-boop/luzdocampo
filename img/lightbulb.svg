@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lâmpada eficiente">
+  <rect width="64" height="64" rx="16" fill="#f3f7ff"/>
+  <path d="M23 30a9 9 0 1 1 18 0c0 5-4 7-5 11h-8c-1-4-5-6-5-11Z" fill="#ffce32" stroke="#09204f" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M28 47h8M29 53h6M18 18l-4-4M46 18l4-4M32 11V7" stroke="#1d63ff" stroke-width="3" stroke-linecap="round"/>
+</svg>
